@@ -4,7 +4,7 @@
 ![Persistence](https://img.shields.io/badge/Persistence-localStorage-16a34a)
 
 ## 🎨 Live Demo
-Open [`index.html`](index.html) in your browser to manage your tasks.
+Open [Live Demo](https://htmlpreview.github.io/?https://github.com/AliShah1029384756/todo-app/blob/main/index.html) in your browser to manage your tasks.
 
 ## Overview
 Task management project for practicing CRUD operations, filtering logic, and browser persistence.
