@@ -1,12 +1,10 @@
 # Todo App
 
-## Overview
-A task management project for practicing CRUD operations, filtering logic, and browser persistence.
+![Project](https://img.shields.io/badge/Project-Frontend-0ea5e9)
+![Persistence](https://img.shields.io/badge/Persistence-localStorage-16a34a)
 
-## Learning Outcomes
-- Build add/edit/delete task workflows
-- Implement status filters and UI state updates
-- Persist task data with localStorage
+## Overview
+Task management project for practicing CRUD operations, filtering logic, and browser persistence.
 
 ## Tech Stack
 - HTML
@@ -16,6 +14,11 @@ A task management project for practicing CRUD operations, filtering logic, and b
 
 ## Run Locally
 1. Open `index.html` in a browser.
+
+## Learning Outcomes
+- Build add/edit/delete task workflows
+- Implement status filters and UI state updates
+- Persist task data with localStorage
 
 ## Common Mistakes
 - Not trimming empty input before adding tasks
