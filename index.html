@@ -3,30 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Todo List</title>
+  <title>Todo List | Ali Shah</title>
+  <meta name="description" content="A focused todo list app with filters, persistent tasks, and a clean productivity-first interface.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: block;
+      min-height: 100vh;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(124,58,237,0.14), transparent 30%),
+        radial-gradient(circle at right, rgba(14,165,233,0.10), transparent 28%),
+        #08111f;
+      font-family: 'Inter', sans-serif;
+    }
+    .page-shell { max-width: 1100px; margin: 0 auto; }
+    .hero, .panel {
+      background: rgba(15,23,42,0.82);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.4);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1rem;
+      padding: 2rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+    .eyebrow {
+      display:inline-flex; gap:.5rem; align-items:center;
+      padding:.35rem .8rem; border-radius:999px;
+      background:rgba(124,58,237,0.08); border:1px solid rgba(124,58,237,0.18);
+      color:#c4b5fd; font:700 .72rem/1 'Syne',sans-serif; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1rem;
+    }
+    .hero h1 { font:800 clamp(2.2rem,5vw,4.2rem)/.95 'Syne',sans-serif; letter-spacing:-.04em; color:#f8fafc; margin-bottom:.8rem; }
+    .hero p { color:#b1bed1; max-width:58ch; line-height:1.7; }
+    .panel { padding: 1rem; }
+    .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
+    .stat { padding:1rem; border-radius:18px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); }
+    .stat strong { display:block; color:#fff; font:800 1rem 'Syne',sans-serif; }
+    .stat span { color:#94a3b8; font-size:.82rem; }
+    .app-stage { display:grid; place-items:center; padding: .5rem 0 2rem; }
+    .app-frame { padding: 14px; border-radius: 28px; background: linear-gradient(135deg, rgba(124,58,237,0.16), rgba(14,165,233,0.12)); }
+    @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>My Todo List</h1>
+  <div class="page-shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">PRODUCTIVITY TOOL · CLEAN FOCUS</div>
+        <h1>Todo List</h1>
+        <p>Keep tasks organized with filters for active and completed items, plus a compact workflow designed for fast capture and quick review.</p>
+      </div>
+      <div class="panel">
+        <div class="stats-grid">
+          <div class="stat"><strong>Fast</strong><span>Quick task entry</span></div>
+          <div class="stat"><strong>Clear</strong><span>Built-in filters</span></div>
+          <div class="stat"><strong>Persistent</strong><span>Stored locally</span></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="input-area">
-      <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="100" />
-      <button id="addBtn">Add</button>
-    </div>
+    <section class="app-stage">
+      <div class="app-frame">
+        <div class="container">
+          <h1>My Todo List</h1>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="active">Active</button>
-      <button class="filter-btn" data-filter="completed">Completed</button>
-    </div>
+          <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="100" />
+            <button id="addBtn">Add</button>
+          </div>
 
-    <ul id="taskList"></ul>
+          <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
 
-    <div class="footer">
-      <span id="itemCount">0 items left</span>
-      <button id="clearCompleted">Clear Completed</button>
-    </div>
+          <ul id="taskList"></ul>
+
+          <div class="footer">
+            <span id="itemCount">0 items left</span>
+            <button id="clearCompleted">Clear Completed</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="app.js"></script>
